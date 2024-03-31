@@ -1,13 +1,11 @@
-tmux:
-	pushd tmux
-	bash setup.sh
-	popd
+.PHONY: all tmux_setup fish_setup
 
-fish:
-	pushd
-	bash setup.sh
-	popd
+all: tmux_setup fish_setup
 
-all:
-	tmux
-	fish
+tmux_setup:
+	@echo "Setting up tmux..."
+	@cd ./tmux && bash setup.sh && cd ..
+
+fish_setup:
+	@echo "Setting up fish..."
+	@cd ./fish && bash setup.sh && cd ..
