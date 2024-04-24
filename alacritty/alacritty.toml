@@ -1,0 +1,21 @@
+import = [
+   "~/.config/alacritty/catppuccin-frappe.toml"
+]
+
+[scrolling]
+  history = 10000
+  multiplier = 3 
+
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "v"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "c"
+mods = "Control"
+
+
+# live_config_reload = true
