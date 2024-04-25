@@ -2,10 +2,14 @@ import = [
    "~/.config/alacritty/catppuccin-frappe.toml"
 ]
 
-[scrolling]
-  history = 10000
-  multiplier = 3 
+shell = "/usr/bin/fish"
 
+[scrolling]
+history = 10000
+multiplier = 3 
+
+[window]
+opacity = 0.92 
 
 [[keyboard.bindings]]
 action = "Paste"
