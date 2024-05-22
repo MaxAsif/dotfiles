@@ -1,15 +1,17 @@
 import = [
-   "~/.config/alacritty/catppuccin-frappe.toml"
+   # "~/.config/alacritty/catppuccin-frappe.toml"
+   "~/.config/alacritty/night-owl.toml"
 ]
 
 shell = "/usr/bin/fish"
-
 [scrolling]
 history = 10000
-multiplier = 3 
+multiplier = 8 
 
 [window]
 opacity = 0.92 
+title = "Alacritty Terminal Emulator"
+dynamic_title = false
 
 [[keyboard.bindings]]
 action = "Paste"
