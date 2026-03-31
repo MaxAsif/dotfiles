@@ -6,6 +6,8 @@ We shall use tpm (tmux plugin manager) to install plugins for tmux
 
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+sudo dnf install tmux
+cp tmux.conf ~/.tmux.conf
 ```
 
 ## Theme
