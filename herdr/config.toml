@@ -1,0 +1,46 @@
+# herdr configuration
+# Keybindings mirror ~/.tmux.conf where herdr has an equivalent concept.
+# tmux "window" -> herdr "tab"; tmux "session" -> herdr "workspace".
+
+[keys]
+# tmux: `set -g prefix C-Space`. (tmux prefix2 C-b is herdr's built-in default.)
+prefix = "ctrl+space"
+
+# Splits. tmux `bind - split-window -v` (stacked, top/bottom) and
+# `bind | split-window -h` (side-by-side). herdr can't bind `|` (shifted pipe),
+# so side-by-side stays on prefix+v; stacked matches your `-` exactly.
+split_horizontal = "prefix+minus"   # stacked (top/bottom), like tmux `-`
+split_vertical   = "prefix+v"       # side-by-side (left/right), like tmux `|`
+
+# vi-style pane focus (tmux mode-keys vi) — these are already herdr defaults,
+# pinned here so they survive future default changes.
+focus_pane_left  = "prefix+h"
+focus_pane_down  = "prefix+j"
+focus_pane_up    = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# Tabs == tmux windows
+new_tab      = "prefix+c"            # tmux `c` new-window
+next_tab     = "prefix+n"
+previous_tab = ""                    # freed: prefix+p is the floating scratch below
+                                     # (use prefix+1..9 / prefix+n to move between tabs)
+
+# tmux `bind r source-file`. herdr's `prefix+r` is resize mode, so reload stays
+# on prefix+shift+r. Uncomment below to instead put reload on prefix+r and move
+# resize elsewhere:
+# reload_config = "prefix+r"
+# resize_mode   = "prefix+shift+r"
+
+# Floating scratch terminal, like tmux-floax (@floax-bind prefix+p).
+# type = "popup" = session-modal overlay that doesn't change the tab layout.
+# NOTE: unlike floax, this spawns a fresh shell each time rather than toggling a
+# persistent pane — closing the shell (exit / ctrl+d) dismisses the popup.
+[[keys.command]]
+key     = "prefix+p"
+type    = "popup"
+command = "fish"
+width   = "80%"
+height  = "80%"
+
+[ui]
+show_agent_labels_on_pane_borders = true
